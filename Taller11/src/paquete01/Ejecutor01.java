@@ -1,24 +1,53 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete01;
 
-/**
- *
- * @author reroes
- */
+import java.util.ArrayList;
+import java.util.List;
+import paquete02.Cuenta;
+import paquete02.Menu;
+import paquete02.MenuCarta;
+import paquete02.MenuDia;
+import paquete02.MenuEconomico;
+import paquete02.MenuNinios;
+
 public class Ejecutor01 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        List<Menu> lista = new ArrayList<>();
+        
+        MenuNinios menuNinios01 = 
+                new MenuNinios(1, 1.5, "Niños 01",2);
+        menuNinios01.calcularValorMenu();
+        lista.add(menuNinios01);
+        
+        MenuNinios menuNinios02 = 
+                new MenuNinios(1, 1.5, "Niños 02",3);
+        menuNinios02.calcularValorMenu();
+        lista.add(menuNinios02);
+        
+        MenuEconomico menuEconomico01 = 
+                new MenuEconomico(25, "Econo 001", 4);
+        menuEconomico01.calcularValorMenu();
+        lista.add(menuEconomico01);
+        
+        MenuDia menuDia01 = 
+                new MenuDia(1, 1, "Dia 001", 5);
+        menuDia01.calcularValorMenu();
+        lista.add(menuDia01);
+        
+        MenuCarta menuCarta01 =
+                new MenuCarta(1.5, 2, 10, "Carta001",
+                        6);
+        menuCarta01.calcularValorMenu();
+        lista.add(menuCarta01);
+        
+        Cuenta cuenta01 = new Cuenta("René Elizalde", lista, 10);
+        cuenta01.calcularValorSubtotal();
+        cuenta01.calcularValorTotal();
+        
+        System.out.println(cuenta01);
+        
     }
-    
-    
+        
 }
 // lo que debe presentar
 /*
